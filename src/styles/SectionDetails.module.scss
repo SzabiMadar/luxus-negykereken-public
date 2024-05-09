@@ -1,0 +1,226 @@
+@import "mixins";
+.sectionHeading {
+  max-height: 100vh;
+}
+.sectionSubtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  .price {
+    color: var(--clr-text);
+    padding-right: var(--spacing-xs);
+    font-size: var(--h3-size);
+    @include breakpoint(tablet-landscape-up) {
+      font-size: var(--h2-size);
+    }
+  }
+}
+
+// Képek rész
+
+.sectionPictures {
+  margin-top: 20px;
+}
+.picturesWrapper {
+  display: grid;
+  gap: var(--spacing-xs);
+  grid-template-columns: 1fr;
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+.picturesSlider {
+  display: flex;
+
+  min-height: 350px;
+  max-height: 550px;
+}
+.picturesStacked {
+  display: none;
+  @include breakpoint(tablet-landscape-up) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+  }
+
+  .pictureItem {
+    position: relative;
+    height: 270px;
+  }
+}
+
+// Részletek rész
+.sectionDetails {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 4rem;
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: 2fr 5fr;
+  }
+
+  &_leftCol {
+    @include breakpoint(tablet-landscape-up) {
+      display: block;
+      place-self: center;
+    }
+  }
+}
+
+.bookingWrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px 5px 5px 5px;
+  padding: 40px 40px 40px 40px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  div:nth-of-type(1) {
+    margin-bottom: var(--spacing-xs);
+  }
+  p {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .telefon {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    place-items: center;
+  }
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  place-items: center;
+}
+.iconWrapper {
+  text-align: left;
+  line-height: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: all 0.4s ease;
+  background-color: var(--clr-primary);
+  border-radius: 50px 50px 50px 50px;
+  padding: 12px 12px 12px 12px;
+  .wrappedIcon {
+    color: white;
+    font-size: var(--h4-size);
+    position: relative;
+  }
+}
+.contactWrapper {
+  margin-left: var(--spacing-s);
+  width: 100%;
+  .contactTitle {
+    font-size: var(--heading-med);
+    font-weight: 600;
+  }
+  .contactText {
+    display: block;
+    color: var(--clr-secondary);
+    font-weight: 400;
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.detailsListSection {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(tablet-landscape-up) {
+    margin-left: var(--spacing-m);
+    padding: 0 var(--spacing-s) var(--spacing-s) var(--spacing-xs);
+  }
+}
+.detailsListWrapper {
+  padding: var(--spacing-s) var(--spacing-s) var(--spacing-s) 0;
+  @include breakpoint(tablet-landscape-up) {
+    padding: 0 0 var(--spacing-s) 0;
+  }
+}
+.detailsList {
+  margin: 0;
+  padding: 0;
+}
+.detailsListItem {
+  display: flex;
+  align-items: center;
+  color: var(--clr-text--faded);
+  padding: 0 var(--spacing-xs) var(--spacing-xs) 0;
+
+  .listIcon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-right: var(--spacing-s);
+    color: var(--clr-secondary);
+
+    @include breakpoint(tablet-landscape-up) {
+      font-size: 26px;
+    }
+  }
+}
+
+.detailsListContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: var(--spacing-xs);
+
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xxl);
+  }
+}
+
+.divider {
+  hyphens: manual;
+  display: flex;
+  margin-bottom: 20px;
+}
+.divider_separator {
+  line-height: 1.5;
+  display: flex;
+  margin: 0;
+
+  width: 100%;
+  border-top: 0.5px solid var(--clr-grey);
+}
+
+.jarmuLeirasContainer {
+  padding: var(--spacing-s) 0 var(--spacing-s) 0;
+  h3 {
+    margin-bottom: var(--spacing-s);
+  }
+}
+
+.jarmuAdatok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--spacing-xs);
+  @include breakpoint(tablet-landscape-up) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.adatList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.adatListItem,
+.ertekListItem {
+  margin-bottom: var(--spacing-xs);
+}
+.ertekListItem {
+  color: var(--clr-secondary);
+}
+.repter {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 3rem 3rem 3rem;
+  margin-bottom: 2rem;
+}

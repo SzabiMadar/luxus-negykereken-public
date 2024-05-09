@@ -1,0 +1,89 @@
+@import "mixins";
+.navBar {
+  background-color: var(--clr-background);
+  padding: 0 5%;
+
+  @include breakpoint(tablet-landscape-up) {
+    padding: 0 15%;
+  }
+
+  &__innerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 15vh;
+    @include breakpoint(tablet-landscape-up) {
+      max-height: 10vh;
+    }
+
+    button {
+      border: none;
+      background: none;
+      font-size: 20px;
+    }
+    .mobile_menu_icon {
+      display: block;
+      cursor: pointer;
+      font-size: 30px;
+      @include breakpoint(tablet-landscape-up) {
+        display: none;
+      }
+    }
+  }
+  //Logo styles
+  &__branding {
+    width: 140px;
+    height: 126px;
+    padding: 0.3rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  //Link styles
+  &__list {
+    display: none;
+    @include breakpoint(tablet-landscape-up) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  //linkItem styles
+  &__listItem {
+    list-style: none;
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease-in;
+      padding: 15px;
+      color: var(--clr-text);
+      &:hover {
+        background-color: rgba(37, 37, 37, 1);
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+.nav_links_mobile {
+  z-index: 1000;
+  margin-top: 10vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-background);
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 50vh;
+  transition: all 0.5s ease-in-out;
+
+  padding: 0;
+  li {
+    padding: var(--spacing-s) var(--spacing-m);
+  }
+}
+.logo {
+  padding: 1rem;
+}

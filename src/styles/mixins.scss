@@ -1,0 +1,32 @@
+// Media Query mixins
+@mixin breakpoint($point) {
+  @if $point == phone {
+    @media (max-width: 47.9375em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 48em) and (max-width: 61.875em) {
+      @content;
+    }
+  } @else if $point == tablet-landscape-up {
+    @media (min-width: 62em) {
+      @content;
+    }
+  } @else if $point == tablet-landscape {
+    @media (min-width: 62em) and (max-width: 74.75em) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 75em) and (max-width: 93.75em) {
+      @content;
+    }
+  } @else if $point == desktop-up {
+    @media (min-width: 75em) {
+      @content;
+    }
+  } @else if $point == wide-screen {
+    @media (min-width: 94em) {
+      @content;
+    }
+  }
+}

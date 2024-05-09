@@ -1,0 +1,49 @@
+@import "mixins";
+.footer {
+  background-color: var(--clr-primary);
+}
+.footerContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include breakpoint(tablet-landscape-up) {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.footerBranding {
+  position: relative;
+  width: 210px;
+  height: 180px;
+}
+
+.footerBrandingTitle {
+  font-size: var(--h5-size);
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  margin-bottom: var(--spacing-xs);
+}
+
+.tamogatoWrapper {
+  @include breakpoint(tablet-landscape-up) {
+    padding-left: var(--spacing-m);
+  }
+  span {
+    display: block;
+  }
+}
+.contactText {
+  display: block;
+  text-decoration: none;
+
+  &:first-child {
+    margin-top: var(--spacing-xs);
+  }
+}
